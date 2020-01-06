@@ -1,17 +1,20 @@
-const employeeDiv = document.getElementById('employees');
-const url = 'https://randomuser.me/api/?results=10';
+const parentDiv = document.getElementById('employees');
+const url = 'https://randomuser.me/api/?results=12';
 
 fetch(url)
-    .then((resp) => resp.json()) 
-    .then(data => generateImage(data.message))
-    .catch(function(error) {
-        console.log(error);
-    });
-
-    function generateImage(data) {
-        const html = `
-        <img src="${data}">
+  .then(response => response.json())
+  .then(data => data.results.map((employee) => {
+      var employeeDiv = document.createElement("div");
+      employeeDiv.innerHTML = 
+        `<img src="${employee.picture.medium}">
+        <div class="info">
+        <h4>${employee.name.first} ${employee.name.last}</h4>
+          <p>${employee.email}</p>
+          <p>${employee.location.city}</p>
+        <div>
         `;
-        employeeDiv.innerHTML = html;
+      employeeDiv.classList.add("employee");
+      parentDiv.appendChild(employeeDiv);
+  }));
+  
 
-    }

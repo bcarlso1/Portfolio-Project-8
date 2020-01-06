@@ -1,0 +1,64 @@
+img {
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: 18px;
+    margin-left: 10px;
+}
+
+#employees {
+    display: grid;
+    grid-template-columns: 340px;
+    grid-template-rows: repeat(12, 120px);
+    grid-gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.employee {
+    border: solid lightgray 1px;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+}
+
+.employee:hover {
+    border: 2px solid pink;
+}
+
+#employees:hover img {
+    border: 2px solid pink;
+}
+
+h4, p {
+    margin: 2px;
+}
+
+.info {
+    display: inline-block;
+    padding-top: 0px;
+    padding-bottom: 18px;
+    padding-left: 15px;
+}
+
+body { 
+    background: #f7f5f3;
+}
+
+@media (min-width: 768px) {
+
+    #employees {
+        grid-template-columns: 340px 340px;
+        grid-template-rows: repeat(6, 120px);
+    }
+
+
+}
+
+@media (min-width: 1085px) {
+
+    #employees {
+        grid-template-columns: 340px 340px 340px;
+        grid-template-rows: repeat(4, 120px);
+    }
+}
