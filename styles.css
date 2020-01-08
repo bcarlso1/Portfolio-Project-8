@@ -22,16 +22,23 @@ img {
     background-color: white;
 }
 
-.employee:hover {
-    border: 2px solid pink;
+.employee img,
+.info,
+.more-detail {
+    pointer-events: none;
 }
 
-#employees:hover img {
+
+.employee:hover img {
     border: 2px solid pink;
 }
 
 h4, p {
     margin: 2px;
+}
+
+p {
+    font-size: 10pt;
 }
 
 .info {
@@ -43,6 +50,51 @@ h4, p {
 
 body { 
     background: #f7f5f3;
+}
+
+#modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(220, 220, 220, 0.7);
+    display: none;
+    z-index: 1;
+    position: fixed;
+}
+
+#modal-content {
+    display: block;
+    background-color: white;
+    border: 1px solid lightgray;
+    width: 200px;
+    height: 270px;
+    text-align: center;
+    position: fixed;
+    left: 40%;
+    top: 30%;
+}
+
+hr {
+    width: 80%;
+}
+
+#modal p {
+    margin: 5px;
+}
+
+#modal-x {
+    float: right;
+}
+
+#modal-text {
+    align-content: center;
+}
+
+.more-detail {
+    display: none;
+}
+
+#modal .more-detail {
+    display: block;
 }
 
 @media (min-width: 768px) {
