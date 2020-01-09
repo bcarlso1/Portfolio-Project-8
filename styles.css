@@ -1,3 +1,41 @@
+h1 {
+    text-align: center;
+}
+
+header {
+    text-align: center;
+    align-content: center;
+}
+
+#searchBar {
+    padding: 10px 10px;   
+    height: 35px;
+    align-content: center;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+#suggestions {
+    width: 300px; 
+    background-color: white;
+    align-content: center;
+}
+
+#suggestions div {
+    border: 1px solid lightgray;
+    margin-left: 0 auto;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+#suggestions div:hover {
+   background-color: gray;
+   color: white;
+   cursor: pointer;
+}
+
 img {
     border-radius: 50%;
     display: inline-block;
@@ -66,7 +104,7 @@ body {
     background-color: white;
     border: 1px solid lightgray;
     width: 200px;
-    height: 270px;
+    height: 280px;
     text-align: center;
     position: fixed;
     left: 40%;
@@ -83,6 +121,8 @@ hr {
 
 #modal-x {
     float: right;
+    padding-left: 190px;
+    font-size: 20px;
 }
 
 #modal-text {
@@ -96,6 +136,17 @@ hr {
 #modal .more-detail {
     display: block;
 }
+
+#left {
+    float: left;
+    font-size: 20px;
+}
+
+#right {
+    float: right;
+    font-size: 20px;
+}
+
 
 @media (min-width: 768px) {
 

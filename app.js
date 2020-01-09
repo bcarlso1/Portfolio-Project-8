@@ -49,3 +49,59 @@ document.getElementById('modal-x').addEventListener("click", (e) => {
     document.getElementById('modal').style.display = "none";
   }  
 }); 
+
+/* *****************
+NAVIGATE MODAL 
+***************** */
+
+
+document.getElementById('left').addEventListener("click", (e) => {
+  alert("navigate to previous");
+
+});
+
+document.getElementById('right').addEventListener("click", (e) => {
+  alert("navigate to next");
+
+});
+
+/* **********
+AUTOCOMPLETE SEARCH
+************** */
+
+
+const names = [
+  {name: "Victoria Chambers"},
+  {name: "Dale Byrd"},
+  {name: "Dawn Wood"},
+  {name: "Dan Oliver"}
+];
+
+const searchBar = document.getElementById("searchBar");
+const suggestionsDiv = document.getElementById("suggestions");
+
+searchBar.addEventListener("keyup", function(){
+  const input = searchBar.value;
+  if (input == "") {
+      suggestionsDiv.innerHTML = "";
+  }
+  suggestionsDiv.innerHTML = "";
+  const suggestions = names.filter(function(person) {
+      return person.name.toLowerCase().startsWith(input);
+    })
+    suggestions.forEach(function(suggested) {
+          const div = document.createElement('div');
+          div.innerHTML = suggested.name;
+          suggestionsDiv.appendChild(div);
+    });
+    if (input == "") {
+      suggestionsDiv.innerHTML = "";
+  }
+});
+
+suggestionsDiv.addEventListener("click", function(event){
+  var divText = event.target.innerHTML;
+  searchBar.value = divText;
+  suggestionsDiv.innerHTML = "";
+});
+
