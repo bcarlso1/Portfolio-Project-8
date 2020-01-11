@@ -98,17 +98,18 @@ function myFunction() {
     console.log(mySearch);
 
     for (var i = 0; i < items.length; i += 1) {
-        var title = items[i].innerHTML;
-        var alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        var title = items[i].innerHTML.toLowerCase();
         console.log(title);
+        if (title.includes(mySearch)) {
+          itemsParent[i].style.display = "";
+              } else {
+           itemsParent[i].style.display = "none";
+          }
+      var alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         if (alphabet.includes(title.charAt(0)) == false) {
-        itemsParent[i].style.display = "none";
-        }
-         if (title.startsWith(mySearch)) {
-           itemsParent[i].style.display = "";
-            } else {
-         itemsParent[i].style.display = "none";
-        }
+              itemsParent[i].style.display = "none";
+    }
+      
 }
 }
 ;
