@@ -62,9 +62,11 @@ img {
 
 .employee img,
 .info,
-.more-detail {
+.more-detail,
+#employee-1 {
     pointer-events: none;
 }
+
 
 
 .employee:hover img {
